@@ -16,10 +16,10 @@ C/S模型：
 B/S模型：
 	browser-server
 
-		  C/S  			B/S
+		  C/S  				B/S
 	优点	缓存大量数据，协议	   安全，跨平台，开发工作量小
 		选择灵活，速度快
-	缺点	安全性不足，不能跨平台     不能缓存大量数据，严格遵守http
+	缺点	安全性不足，不能跨平台    	 不能缓存大量数据，严格遵守http
 
 网络传输流程：
 	数据没有封装前不能在网络中传递
@@ -61,7 +61,7 @@ UDP：
 	ntohs：网络→本地（port）
 
 IP地址转换函数：
-	int inet_pton(int af,const char *src,void *dst);	本地字节序(string)→网络字节序
+	int inet_pton(int af,const char *src,void *dst);	(本地字节序(string)→网络字节序)
 	af:  AF_INET  AFI_INET6
 	src:(传入)点分十进制IP地址(string IP)
 	dst:(传出)网络字节序IP地址
