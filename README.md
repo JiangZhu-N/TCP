@@ -1,9 +1,11 @@
 # server
 
-#协议：
+协议：
+
 	一组规则。
 
 分层模型结构：
+
 	OSI七层模型 ： 物  数  网  传  会  表  应
 	TCP/IP四层模型 ： 网(链)  网  传  应
 		应用层：http  ftp  nfs  ssh  telnet
@@ -12,8 +14,10 @@
 		链路层：以太网帧协议  ARP
 
 C/S模型：
+
 	client-server
 B/S模型：
+
 	browser-server
 
 		  C/S  				B/S
@@ -22,13 +26,16 @@ B/S模型：
 	缺点	安全性不足，不能跨平台    	 不能缓存大量数据，严格遵守http
 
 网络传输流程：
+
 	数据没有封装前不能在网络中传递
 
 以太网帧协议：
+
 	ARP协议：根据IP地址获取mac地址
 	以太网帧协议：根据mac地址完成数据包传递
 
 IP协议：
+
 	版本：IPv4  IPv6
 	TTL：设置数据包在路由节点中跳转上限，每经过一个路由节点，该值减一，减为零的路由，有义务将该数据包丢弃
 
@@ -48,10 +55,12 @@ UDP：
 	16位源端口号  16位目的端口号
 
 网络套接字：	socket
+
 	一个文件描述符指向一个套接字（套接字内部由内核借助两个缓冲区实现）
 	通信过程中，套接字成对出现
 
 网络字节序：
+
 	小端法：（PC本地存储）	高位存高地址，低位存低地址
 	大端法：（网络存储）	高位存低地址，低位存高地址
 
@@ -61,7 +70,9 @@ UDP：
 	ntohs：网络→本地（port）
 
 IP地址转换函数：
-	int inet_pton(int af,const char *src,void *dst);	(本地字节序(string)→网络字节序)
+
+	int inet_pton(int af,const char *src,void *dst);	
+	本地字节序(string)→网络字节序
 	af:  AF_INET  AFI_INET6
 	src:(传入)点分十进制IP地址(string IP)
 	dst:(传出)网络字节序IP地址
@@ -80,6 +91,7 @@ IP地址转换函数：
 		失败：NULL
 
 sockadder地址结构：
+
 	struct sockaddr_in addr;
 	addr.sin_family=AF_INET/AF_INET6
 	addr.sin_port=htons(0~65535)
@@ -88,6 +100,7 @@ sockadder地址结构：
 	bind(fd,(struct sockaddr *)&addr,size);
 
 socket函数：
+
 	#include<sys/socket.h>
 
 	int socket(int domain,int type,int protocol);	创建一个套接字
