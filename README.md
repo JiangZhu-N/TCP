@@ -85,7 +85,7 @@ IP地址转换函数：
 		失败：-1
 
 	const char *inet_ntop(int af,const void *src,char *dst,socklen_t size);
-	af:  AF_INET  AFI_INET6
+	af:  AF_INET  AF_INET6
 	src：网络字节序IP地址
 	dst：本地字节序IP地址（string IP）
 	size：dst的大小
