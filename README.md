@@ -147,4 +147,14 @@ socket函数：
 		返回值：
 			成功：能与服务器进行数据通信的socket的文件描述符
 			失败：-1 errno
+			
+			
+	int connect(int sockfd,const struct sockaddr *addr,socklen_t addrlen);	使现有的socket与服务器建立连接
+		sockfd: socket函数返回值
+		addr:传入参数  服务器的地址结构
+		adrlen:服务器的地址结构大小
+		返回值：
+			成功：0
+			失败：-1 errno
+		如果不使用bind绑定客户端地址结构，则采用“隐式绑定”
 	
