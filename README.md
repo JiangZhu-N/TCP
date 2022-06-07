@@ -135,3 +135,11 @@ socket函数：
 
 	int accept(int sockfd,struct sockaddr *addr,socklen_t *addrlen);	阻塞等待客户端连接，成功则返回一个与客户端成功连接的socket的文件描述符
 		sockfd:socket的返回值
+		addr:传出参数  成功与服务器建立连接的客户端的地址结构（IP + port）
+			socklen_t clit_addr_len = sizeof(addr)
+		addrlen:传入传出  &clit_addr_len 
+			入：addr的大小		出：客户端addr实际大小
+		返回值：
+			成功：能与服务器进行数据通信的socket的文件描述符
+			失败：-1 errno
+	
