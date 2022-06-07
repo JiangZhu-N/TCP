@@ -158,3 +158,23 @@ socket函数：
 			失败：-1 errno
 		如果不使用bind绑定客户端地址结构，则采用“隐式绑定”
 	
+TCP通信流程分析：
+
+	server：
+		1.socket()	创建socket
+		2.bind()	绑定服务器地址结构
+		3.listen()	设置监听上限
+		4.accept()	阻塞监听客户端连接
+		5.read(fd)	读socket获取客户端数据
+		6.代码
+		7.write(fd)	
+		8.close()
+	
+	client:
+		1.socket()	创建socket
+		2.connect()	与服务器建立连接
+		3.write()	写数据到socket
+		4.read()	读转换后的数据
+		5.代码
+		6.close()
+
