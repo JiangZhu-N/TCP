@@ -85,7 +85,6 @@ IP地址转换函数：
 		失败：-1
  
  
-
 	const char *inet_ntop(int af,const void *src,char *dst,socklen_t size);
 	af:  AF_INET  AF_INET6
 	src：网络字节序IP地址
@@ -108,6 +107,7 @@ socket函数：
 
 	#include<sys/socket.h>
 
+
 	int socket(int domain,int type,int protocol);	创建一个套接字
 		domain:  AF_INET  AF_INET6  AF_UNIX
 		type:  SOCK_STREAM  SOCK_DGRAM
@@ -115,7 +115,6 @@ socket函数：
 		返回值：
 			成功：新套接字所对应的文件描述符
 			失败：-1 errno
-
 
 
 	int bind(int sockfd,const struct sockaddr *addr,socklen_t size);	给socket绑定一个地址结构(IP+port)
@@ -131,14 +130,12 @@ socket函数：
 			失败：-1 errno
 
 
-
 	int listen(int sockfd,int backlog);	设置同时与服务器建立连接的上限数（同时进行三次握手的客户端数量）
 		sockfd:socket的返回值
 		backlog:上限数值（最大128）
 		返回值：
 			成功：0
 			失败：-1 errno
-
 
 
 	int accept(int sockfd,struct sockaddr *addr,socklen_t *addrlen);	阻塞等待客户端连接，成功则返回一个与客户端成功连接的socket的文件描述符
