@@ -26,6 +26,7 @@ int main()
     serv_addr.sin_family = AF_INET;
     serv_addr.sin_port = htons(SERV_PORT);
     serv_addr.sin_addr.s_addr = htonl(INADDR_ANY);
+    clit_addr_len = sizeof(clit_addr);
 
     int lfd = 0;
     int cfd = 0;
@@ -46,7 +47,6 @@ int main()
         err("listen失败");
     }
 
-    clit_addr_len = sizeof(clit_addr);
     cfd = accept(lfd, (struct sockaddr *)&clit_addr, &clit_addr_len);
     if (cfd == -1)
     {
