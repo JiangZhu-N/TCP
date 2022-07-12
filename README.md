@@ -160,7 +160,7 @@ socket函数：
 	
 TCP通信流程分析：
 
-	server：
+	server： 
 		1.socket()	创建socket
 		2.bind()	绑定服务器地址结构
 		3.listen()	设置监听上限
